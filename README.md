@@ -33,6 +33,40 @@ Orhun Utku Aydin, Jana Rieger, Adam Hilbert, Dimitrios Rallios, Satoru Tanioka, 
      "L-ACA": 12,  
      "3rd-A2": 13  
 
+## Inference
+
+To set up the environment and install the necessary dependencies, follow these steps:
+
+#### Build conda environment
+1. Create and Activate a Virtual Environment  
+```bash
+conda create -n topcow_claim python==3.11   
+conda activate topcow_claim  
+ ```
+
+2. Install the requirements
+```bash
+pip install ultralytics
+cd topcow-2024-nnunet
+pip install -e .
+```
+
+#### Download model weights
+Download model weights from Zenodo:  
+- https://zenodo.org/records/14191592
+
+Place models inside **models** folder:
+- models/yolo-cow-detection.pt
+- models/topcow-claim-models
+
+### Running inference
+
+Run the segment_circle_of_willis.py specifying following variables in the beginning of the segment_circle_of_willis.py script:  
+(1) YOLO_FILE_PATH: the path to the yolo model    
+(2) SEGMODEL_DIR_PATH: the folder containing the trained nnUnet segmentation models  
+(3) IMG_FOLDER: the folder containing the input CTA or TOF-MRA images  
+(4) SEGMENTATION_FOLDER: the folder where the segmentation results should be stored   
+
 ## Training details 
 An additional 500 patients (250 CTA, 250 MRA) were included in the training dataset. All used in-house and public datasets are detailed in the Table below.  
 Inclusion criteria on additional data were:   
@@ -86,39 +120,6 @@ Manual segmentation was based on initial pre-labeling from the baseline model an
 
 10 Castellano, A., et al. “EDEN2020 Human Brain MRI Datasets for Healthy Volunteers (1.0)”, Zenodo, 2019 
 
-## Inference
-
-To set up the environment and install the necessary dependencies, follow these steps:
-
-#### Build conda environment
-1. Create and Activate a Virtual Environment  
-```bash
-conda create -n topcow_claim python==3.11   
-conda activate topcow_claim  
- ```
-
-2. Install the requirements
-```bash
-pip install ultralytics
-cd topcow-2024-nnunet
-pip install -e .
-```
-
-#### Download model weights
-Download model weights from Zenodo:  
-- https://zenodo.org/records/14191592
-
-Place models inside **models** folder:
-- models/yolo-cow-detection.pt
-- models/topcow-claim-models
-
-### Running inference
-
-Run the segment_circle_of_willis.py specifying following variables in the beginning of the segment_circle_of_willis.py script:  
-(1) YOLO_FILE_PATH: the path to the yolo model    
-(2) SEGMODEL_DIR_PATH: the folder containing the trained nnUnet segmentation models  
-(3) IMG_FOLDER: the folder containing the input CTA or TOF-MRA images  
-(4) SEGMENTATION_FOLDER: the folder where the segmentation results should be stored  
 
 ### References
 - Yang, K., Musio, F., Ma, Y., Juchler, ... , Menze, B., 2024. TopCoW: Benchmarking Topology-Aware Anatomical Segmentation of the Circle of Willis (CoW) for CTA and MRA. https://doi.org/10.48550/arXiv.2312.17670
