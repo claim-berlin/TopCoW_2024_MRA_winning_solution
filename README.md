@@ -121,7 +121,7 @@ Manual segmentation was based on initial pre-labeling from the baseline model an
 10 Castellano, A., et al. “EDEN2020 Human Brain MRI Datasets for Healthy Volunteers (1.0)”, Zenodo, 2019 
 
 ### Acknowledgements   
-We acknowledge the contribution of the MRCLEAN Investigators, Satoru Tanioka and Fujimaro Ishida in providing their data for this research.  
+We acknowledge the contribution of both the MRCLEAN Investigators and Satoru Tanioka, Fujimaro Ishida in providing their data for this research.  
 
 ### References
 - Yang, K., Musio, F., Ma, Y., Juchler, ... , Menze, B., 2024. TopCoW: Benchmarking Topology-Aware Anatomical Segmentation of the Circle of Willis (CoW) for CTA and MRA. https://doi.org/10.48550/arXiv.2312.17670
